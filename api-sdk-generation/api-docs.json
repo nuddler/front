@@ -1,0 +1,410 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Api Documentation",
+    "version": "1.0",
+    "title": "Api Documentation",
+    "termsOfService": "urn:tos",
+    "contact": {
+      
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "home-controller",
+      "description": "Home Controller"
+    }
+  ],
+  "paths": {
+    "/api/car/{id}": {
+      "get": {
+        "tags": [
+          "home-controller"
+        ],
+        "summary": "Get a CarDetails objects with car details",
+        "operationId": "carDetailsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation.",
+            "schema": {
+              "$ref": "#/definitions/CarDetails"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "User is not authorized to use this resource."
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "A generic error indication for an unexpected server execution problem."
+          }
+        }
+      }
+    },
+    "/api/cars": {
+      "get": {
+        "tags": [
+          "home-controller"
+        ],
+        "summary": "Get a CarsSection objects with car lists which belongs to user",
+        "operationId": "carsSectionUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation.",
+            "schema": {
+              "$ref": "#/definitions/CarsSection"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "User is not authorized to use this resource."
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "A generic error indication for an unexpected server execution problem."
+          }
+        }
+      }
+    },
+    "/api/cars/available": {
+      "get": {
+        "tags": [
+          "home-controller"
+        ],
+        "summary": "Get a AvailableCars objects with car lists which could be taken by user",
+        "operationId": "availableCarsUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation.",
+            "schema": {
+              "$ref": "#/definitions/AvailableCars"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "User is not authorized to use this resource."
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "A generic error indication for an unexpected server execution problem."
+          }
+        }
+      }
+    },
+    "/api/greetings": {
+      "get": {
+        "tags": [
+          "home-controller"
+        ],
+        "summary": "Get a GreetingsSection object.",
+        "operationId": "greetingsSectionUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation.",
+            "schema": {
+              "$ref": "#/definitions/GreetingsSection"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "User is not authorized to use this resource."
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "A generic error indication for an unexpected server execution problem."
+          }
+        }
+      }
+    },
+    "/api/teasers": {
+      "get": {
+        "tags": [
+          "home-controller"
+        ],
+        "summary": "Get a TeasersListSection objects with teaser lists to show below cars section.",
+        "operationId": "teasersSectionUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation.",
+            "schema": {
+              "$ref": "#/definitions/TeasersListSection"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "User is not authorized to use this resource."
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "A generic error indication for an unexpected server execution problem."
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AvailableCars": {
+      "type": "object",
+      "properties": {
+        "carList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CarBasicInfo"
+          }
+        }
+      },
+      "title": "AvailableCars"
+    },
+    "CarBasicInfo": {
+      "type": "object",
+      "properties": {
+        "brand": {
+          "type": "string"
+        },
+        "colour": {
+          "type": "string"
+        },
+        "endOfInsurance": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "endOfTechnicalInspection": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "engine": {
+          "type": "string"
+        },
+        "fuelType": {
+          "type": "string"
+        },
+        "iconTitle": {
+          "type": "string"
+        },
+        "iconUrl": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "prettyName": {
+          "type": "string"
+        },
+        "taken": {
+          "type": "boolean"
+        },
+        "takenBy": {
+          "type": "string"
+        },
+        "totalMileage": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "CarBasicInfo"
+    },
+    "CarDetails": {
+      "type": "object",
+      "properties": {
+        "brand": {
+          "type": "string"
+        },
+        "colour": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "endOfInsurance": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "endOfTechnicalInspection": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "engine": {
+          "type": "string"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Feature"
+          }
+        },
+        "fuelType": {
+          "type": "string"
+        },
+        "iconTitle": {
+          "type": "string"
+        },
+        "iconUrl": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "prettyName": {
+          "type": "string"
+        },
+        "totalMileage": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "working": {
+          "type": "boolean"
+        }
+      },
+      "title": "CarDetails"
+    },
+    "CarsSection": {
+      "type": "object",
+      "properties": {
+        "carList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CarBasicInfo"
+          }
+        },
+        "headline": {
+          "type": "string"
+        }
+      },
+      "title": "CarsSection"
+    },
+    "Feature": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "iconTitle": {
+          "type": "string"
+        },
+        "iconUrl": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "prettyName": {
+          "type": "string"
+        }
+      },
+      "title": "Feature"
+    },
+    "GreetingsSection": {
+      "type": "object",
+      "properties": {
+        "greetingText": {
+          "type": "string"
+        }
+      },
+      "title": "GreetingsSection"
+    },
+    "Teaser": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "headline": {
+          "type": "string"
+        },
+        "iconTitle": {
+          "type": "string"
+        },
+        "iconUrl": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "title": "Teaser"
+    },
+    "TeasersListSection": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "type": "string"
+        },
+        "teaserList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Teaser"
+          }
+        }
+      },
+      "title": "TeasersListSection"
+    }
+  }
+}

@@ -1,0 +1,267 @@
+{
+	"availableCars": {
+		"carList": [
+			{
+				"brand": "ut sunt deserunt ",
+				"colour": "quis Lorem",
+				"endOfInsurance": "4448-08-05T13:18:07.900Z",
+				"endOfTechnicalInspection": "1984-09-20T06:42:47.029Z",
+				"engine": "c",
+				"fuelType": "dolor",
+				"iconTitle": "sit id occaecat non ex",
+				"iconUrl": "adipisicing laboris Excepte",
+				"id": "amet consequat eu enim nulla",
+				"model": "est consectetur voluptate aute",
+				"name": "commodo elit",
+				"prettyName": "dolor reprehenderit in",
+				"taken": false,
+				"takenBy": "eiusmod aute deserunt nisi id",
+				"totalMileage": -59889195
+			},
+			{
+				"brand": "quis esse Excepteur est in",
+				"colour": "enim commodo dolore dolor deserunt",
+				"endOfInsurance": "4009-07-07T03:47:00.760Z",
+				"endOfTechnicalInspection": "3260-11-11T08:33:15.327Z",
+				"engine": "ut aute",
+				"fuelType": "enim sunt in do ipsum",
+				"iconTitle": "id quis tempor velit Lorem",
+				"iconUrl": "sint ut nisi",
+				"id": "ut et tempor est eiusmod",
+				"model": "sint",
+				"name": "id culpa ut",
+				"prettyName": "enim qui nisi sunt",
+				"taken": true,
+				"takenBy": "sunt fugiat Ut",
+				"totalMileage": -68861546
+			},
+			{
+				"brand": "adipisicing in mollit qui",
+				"colour": "",
+				"endOfInsurance": "3060-02-16T10:09:40.389Z",
+				"endOfTechnicalInspection": "3306-08-03T16:56:35.251Z",
+				"engine": "id ea pariatur quis",
+				"fuelType": "sit commodo aliquip et reprehenderit",
+				"iconTitle": "Lorem magna",
+				"iconUrl": "nulla deserunt in laborum",
+				"id": "fugiat",
+				"model": "culpa laborum",
+				"name": "nisi eu velit dolore sed",
+				"prettyName": "do pariatur laboris ex",
+				"taken": true,
+				"takenBy": "mollit irure et deserunt in",
+				"totalMileage": 31119215
+			}
+		]
+	},
+	"carDetails1": {
+		"brand": "nisi laborum",
+		"colour": "mollit",
+		"description": "magna officia ut Duis et",
+		"endOfInsurance": "4920-11-08T22:17:39.112Z",
+		"endOfTechnicalInspection": "2335-01-08T02:40:45.696Z",
+		"engine": "officia do",
+		"features": [
+			{
+				"description": "consectetur ad",
+				"iconTitle": "et incididunt pariatur cupidatat",
+				"iconUrl": "sed dolor cillum do ullamco",
+				"id": "mollit in",
+				"name": "nisi laborum sunt deserunt",
+				"prettyName": "aute cupida"
+			},
+			{
+				"description": "laboris",
+				"iconTitle": "culpa voluptate",
+				"iconUrl": "cillum enim aliqua aute mo",
+				"id": "voluptate",
+				"name": "commodo Ut",
+				"prettyName": "Excepteur"
+			},
+			{
+				"description": "in enim est",
+				"iconTitle": "eiusmod laborum occaecat nisi ad",
+				"iconUrl": "dolor officia",
+				"id": "labore amet sit",
+				"name": "tempor",
+				"prettyName": "adipisicing Excepteur"
+			},
+			{
+				"description": "amet",
+				"iconTitle": "enim",
+				"iconUrl": "anim eu ea sunt",
+				"id": "ut ipsum cupidatat",
+				"name": "id in ipsum aliquip",
+				"prettyName": "Duis irure eu eiusmod in"
+			}
+		],
+		"fuelType": "occaecat est officia reprehenderit Lorem",
+		"iconTitle": "reprehenderit veniam",
+		"iconUrl": "ea labore",
+		"id": "laboris quis reprehenderit",
+		"model": "Duis ex",
+		"name": "ipsum culpa non dolor",
+		"prettyName": "cupidatat in nostrud",
+		"totalMileage": 50716522,
+		"working": false
+	},
+	"Car": {
+		"brand": "et anim",
+		"colour": "mi",
+		"description": "deserunt in",
+		"endOfInsurance": "5054-07-01T02:39:39.058Z",
+		"endOfTechnicalInspection": "3167-11-16T01:45:37.578Z",
+		"engine": "mollit",
+		"features": [
+			{
+				"description": "occaecat",
+				"iconTitle": "incididunt consectetur amet consequat",
+				"iconUrl": "velit aute nostrud",
+				"id": "dolor ex nisi Excepteur",
+				"name": "in ad esse",
+				"prettyName": "ipsum voluptate"
+			},
+			{
+				"description": "nulla in ut mollit",
+				"iconTitle": "labore sit",
+				"iconUrl": "pariatur nulla dolor",
+				"id": "anim",
+				"name": "proident",
+				"prettyName": "nostrud commodo eiusmod"
+			},
+			{
+				"description": "magna labore consequat ",
+				"iconTitle": "fugiat reprehenderit ullamco aliqua",
+				"iconUrl": "do in nostrud",
+				"id": "qui laboris velit sed ex",
+				"name": "ut quis officia anim",
+				"prettyName": "dolore adipisicing in nisi esse"
+			},
+			{
+				"description": "i",
+				"iconTitle": "quis anim in ullamco ad",
+				"iconUrl": "et aliqua do Duis",
+				"id": "quis laborum aute eiusmod amet",
+				"name": "id enim Excepteur dolor anim",
+				"prettyName": "non"
+			},
+			{
+				"description": "dolore Duis Excepteur",
+				"iconTitle": "laborum eu in",
+				"iconUrl": "incididunt eu dolore",
+				"id": "in do sint dolore exercitation",
+				"name": "consectetur nisi",
+				"prettyName": "nostrud cupidatat pa"
+			}
+		],
+		"fuelType": "nostrud reprehenderit eu consectetur",
+		"iconTitle": "Lorem tempor ut Duis incididunt",
+		"iconUrl": "qui amet",
+		"id": "velit aute laborum dolor",
+		"model": "in ut sint",
+		"name": "enim occaecat",
+		"prettyName": "quis nisi elit culpa in",
+		"taken": true,
+		"takenBy": "dolore",
+		"totalMileage": -96058052,
+		"working": false
+	},
+	"cars": {
+		"carList": [
+			{
+				"brand": "laboris veniam",
+				"colour": "nisi sit deserunt Lorem",
+				"description": "magna sin",
+				"endOfInsurance": "3506-06-01T00:46:01.107Z",
+				"endOfTechnicalInspection": "4427-08-21T05:52:19.687Z",
+				"engine": "dolore anim sit",
+				"features": [
+					{
+						"description": "eu do proident",
+						"iconTitle": "est eiusmod et culpa",
+						"iconUrl": "consequat",
+						"id": "id elit",
+						"name": "sed magna Lor",
+						"prettyName": "ullamco id consequat irure"
+					},
+					{
+						"description": "id reprehenderit",
+						"iconTitle": "nostrud ut enim i",
+						"iconUrl": "est",
+						"id": "proident anim",
+						"name": "non adi",
+						"prettyName": "p"
+					},
+					{
+						"description": "sit qui",
+						"iconTitle": "ad quis amet aliquip esse",
+						"iconUrl": "pariatur minim eiusmod",
+						"id": "Excepteur magna aliqua quis consequat",
+						"name": "consectetur veniam",
+						"prettyName": "occaecat "
+					},
+					{
+						"description": "in adipisicing enim aute",
+						"iconTitle": "ut",
+						"iconUrl": "exercitation",
+						"id": "deserunt quis sed",
+						"name": "exercitation Duis enim voluptate Excepteur",
+						"prettyName": "do anim Lor"
+					},
+					{
+						"description": "aute amet",
+						"iconTitle": "id aliqua adipisicing eiusmod",
+						"iconUrl": "amet",
+						"id": "eu",
+						"name": "adipisicing",
+						"prettyName": "labore"
+					}
+				],
+				"fuelType": "nisi aute veniam Excepteur eius",
+				"iconTitle": "nulla",
+				"iconUrl": "sit veniam aute",
+				"id": "242424",
+				"model": "adipisicing in in",
+				"name": "nisi dolor ve",
+				"prettyName": "dolor labore Excepteur",
+				"taken": false,
+				"takenBy": "esse",
+				"totalMileage": -61612101,
+				"working": false
+			}
+		],
+		"headline": "incididunt"
+	},
+	"Feature": {
+		"description": "sunt",
+		"iconTitle": "dolor quis laborum tempor",
+		"iconUrl": "officia reprehenderit et",
+		"id": "adipisicing",
+		"name": "nostrud ad do eiusmod",
+		"prettyName": "esse"
+	},
+	"GreetingsSection": {
+		"greetingText": "tempor nulla exercitation anim ut"
+	},
+	"Teaser": {
+		"description": "nisi ea",
+		"headline": "aute sit",
+		"iconTitle": "nulla",
+		"iconUrl": "http://placekitten.com/400/252",
+		"id": "eiusmod mollit sit",
+		"url": "http://placekitten.com/400/252"
+	},
+	"teasers": {
+		"header": "do Ut deserunt",
+		"teaserList": [
+			{
+				"description": "veniam est minim laboru",
+				"headline": "ex",
+				"iconTitle": "amet dolore",
+				"iconUrl": "http://placekitten.com/400/252",
+				"id": "laborum offici",
+				"url": "in"
+			}
+		]
+	}
+}

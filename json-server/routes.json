@@ -1,0 +1,13 @@
+{
+  "/api/billingAccounts/all": "/billingAccountsAll",
+  "/api/contacts/main": "/mainContact",
+  "/api/contacts/all": "/contactsAll",
+  "/api/orders/open/all": "/openOrdersAll",
+  "/api/orders/open": "/openOrders",
+  "/api/bankAccounts/all": "/bankAccountsAll",
+  "/api/contract_details/*": "/contractDetailsFirst",
+  "/api/contract/*/details": "/$1",
+  "/api/car/*": "/carDetails1",
+  "/api/cars/available": "/availableCars",
+  "/api/*": "/$1"
+}

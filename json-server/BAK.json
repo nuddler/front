@@ -1,0 +1,868 @@
+﻿{
+  "greetings": {
+    "greetingText": "Guten Tag, John Doe"
+  },
+  "accountData": {
+    "header": "Account Data Page",
+    "details": "Details of Account Data page",
+    "rows": [
+      {
+        "description": "Lorem ipsum...  MAIN_CONTACT",
+        "header": "ContactHeader MAIN_CONTACT",
+        "type": "MAIN_CONTACT"
+      },
+      {
+        "description": "Lorem ipsum...  CONTACTS all",
+        "header": "ContactHeaderCONTACTS all",
+        "type": "CONTACTS"
+      },
+      {
+        "description": "Lorem ipsum...  BILLING_ACCOUNTS",
+        "header": "ContactHeader BILLING_ACCOUNTS",
+        "type": "BILLING_ACCOUNTS"
+      },
+      {
+        "description": "Lorem ipsum...  OPEN_ORDERS",
+        "header": "ContactHeader OPEN_ORDERS",
+        "type": "OPEN_ORDERS"
+      },
+      {
+        "description": "Lorem ipsum...  BANK_ACCOUNTS",
+        "header": "ContactHeader BANK_ACCOUNTS",
+        "type": "BANK_ACCOUNTS"
+      }
+    ]
+  },
+  "contacts": {
+    "header": "All contacts",
+    "moreContacts": true,
+    "addressList": [
+      {
+        "name": "Imie Nazwisko",
+        "street": "ul. jakastam",
+        "city": "90-111 Miasto"
+      }
+    ]
+  },
+  "billingAccounts": {
+    "header": "All contacts",
+    "moreContacts": true,
+    "addressList": [
+      {
+        "name": "Imie Nazwisko",
+        "street": "ul. jakastam",
+        "city": "90-111 Miasto"
+      },
+      {
+        "name": "Imie Nazwisko 2",
+        "street": "ul. jakastam 2",
+        "city": "90-111 Miasto 2"
+      }
+    ]
+  },
+  "billingAccountsAll": {
+    "header": "All contacts",
+    "moreContacts": false,
+    "addressList": [
+      {
+        "name": "Imie Nazwisko",
+        "street": "ul. jakastam",
+        "city": "90-111 Miasto"
+      },
+      {
+        "name": "Imie Nazwisko 2",
+        "street": "ul. jakastam 2",
+        "city": "90-111 Miasto 2"
+      }
+    ]
+  },
+  "contactsAll": {
+    "header": "All contacts",
+    "moreContacts": false,
+    "addressList": [
+      {
+        "name": "Imie Nazwisko",
+        "street": "ul. jakastam",
+        "city": "90-111 Miasto"
+      },
+      {
+        "name": "Imie Nazwisko 2",
+        "street": "ul. jakastam 2",
+        "city": "90-111 Miasto 2"
+      }
+    ]
+  },
+  "mainContact": {
+    "header": "Main contacts",
+    "address": {
+      "name": "Imie Nazwisko",
+      "street": "ul. jakastam",
+      "city": "90-111 Miasto"
+    }
+  },
+  "openOrders": {
+    "header": "orders",
+    "moreOrders": true,
+    "orders": [
+      {
+        "id": "ood-1",
+        "creationDate": "11-11-11",
+        "status": "Ok"
+      },
+      {
+        "id": "ood-2",
+        "creationDate": "11-11-11",
+        "status": "Ok"
+      },
+      {
+        "id": "ood-3",
+        "creationDate": "11-11-11",
+        "status": "Ok"
+      }
+    ]
+  },
+  "openOrdersAll": {
+    "header": "orders",
+    "moreOrders": false,
+    "orders": [
+      {
+        "id": "ood-1",
+        "creationDate": "11-11-11",
+        "status": "Ok"
+      },
+      {
+        "id": "ood-2",
+        "creationDate": "11-11-11",
+        "status": "Ok"
+      },
+      {
+        "id": "ood-3",
+        "creationDate": "11-11-11",
+        "status": "Ok"
+      },
+      {
+        "id": "ood-4",
+        "creationDate": "11-11-11",
+        "status": "Ok"
+      },
+      {
+        "id": "ood-5",
+        "creationDate": "11-11-11",
+        "status": "Ok"
+      }
+    ]
+  },
+  "bankAccounts": {
+    "header": "ordebankAccountsrs",
+    "moreBankAccounts": true,
+    "bankAccounts": [
+      {
+        "name": "ood-1",
+        "iban": "11-11-11",
+        "swift": "Ok",
+        "bankName": "bankName"
+      },
+      {
+        "name": "ood-2",
+        "iban": "11-11-11",
+        "swift": "Ok",
+        "bankName": "bankName"
+      },
+      {
+        "name": "ood-3",
+        "iban": "11-11-11",
+        "swift": "Ok",
+        "bankName": "bankName"
+      }
+    ]
+  },
+  "bankAccountsAll": {
+    "header": "bankAccounts",
+    "moreBankAccounts": false,
+    "bankAccounts": [
+      {
+        "name": "ood-1",
+        "iban": "11-11-11",
+        "swift": "Ok",
+        "bankName": "bankName"
+      },
+      {
+        "name": "ood-2",
+        "iban": "11-11-11",
+        "swift": "Ok",
+        "bankName": "bankName"
+      },
+      {
+        "name": "ood-3",
+        "iban": "11-11-11",
+        "swift": "Ok",
+        "bankName": "bankName"
+      },
+      {
+        "name": "ood-4",
+        "iban": "11-11-11",
+        "swift": "Ok",
+        "bankName": "bankName"
+      },
+      {
+        "name": "ood-5",
+        "iban": "11-11-11",
+        "swift": "Ok",
+        "bankName": "bankName"
+      }
+    ]
+  },
+  "contractDetailsFirst": {
+    "accessDataSection": {
+      "dataRows": [
+        [
+          {
+            "type": "TEXT",
+            "value": "Zugangsnummer"
+          },
+          {
+            "type": "TEXT",
+            "value": "320042414748"
+          },
+          {
+            "type": "EMPTY"
+          }
+        ],
+        [
+          {
+            "type": "TEXT",
+            "value": "Personliches Kenwort"
+          },
+          {
+            "type": "TEXT",
+            "value": "*****************"
+          },
+          {
+            "label": "Zurucksetzen/andern",
+            "type": "LINK",
+            "value": "string"
+          }
+        ],
+        [
+          {
+            "type": "TEXT",
+            "value": "Zugangsnummer"
+          },
+          {
+            "label": "Zum Easy Login",
+            "type": "LINK",
+            "value": "string"
+          },
+          {
+            "type": "EMPTY"
+          }
+        ]
+      ],
+      "header": "AccessData"
+    },
+    "detailsSection": {
+      "contractCancelButton": {
+        "icon": "string",
+        "label": "string",
+        "type": "EMPTY",
+        "value": "string"
+      },
+      "contractTransferButton": {
+        "icon": "string",
+        "label": "string",
+        "type": "EMPTY",
+        "value": "string"
+      },
+      "dataRows": [
+        [
+          {
+            "type": "TEXT",
+            "value": "Vertragsnummer"
+          },
+          {
+            "type": "TEXT",
+            "value": "T59272195838"
+          }
+        ],
+        [
+          {
+            "type": "TEXT",
+            "value": "Vertragsbeginn"
+          },
+          {
+            "type": "TEXT",
+            "value": "24.10.2012"
+          }
+        ],
+        [
+          {
+            "type": "TEXT",
+            "value": "Ende der Mindestvertragslaufzeit"
+          },
+          {
+            "type": "TEXT",
+            "value": "24.10.2012"
+          }
+        ],
+        [
+          {
+            "type": "TEXT",
+            "value": "Eignang der Kundigung spatestens am"
+          },
+          {
+            "type": "TEXT",
+            "value": "24.10.2012"
+          }
+        ],
+        [
+          {
+            "type": "TEXT",
+            "value": "Kundigungsfirst"
+          },
+          {
+            "type": "TEXT",
+            "value": "2 Montage 6 Tage"
+          }
+        ],
+        [
+          {
+            "type": "TEXT",
+            "value": "Status"
+          },
+          {
+            "type": "TEXT",
+            "value": "Vertragsbeginn: 24.10.2012 \n Aktuelles Ende Vertragslaufzeit: 24.10.2018"
+          }
+        ],
+        [
+          {
+            "type": "TEXT",
+            "value": "Vertragspartner"
+          },
+          {
+            "type": "TEXT",
+            "value": "Dirk Brammertz"
+          }
+        ],
+        [
+          {
+            "type": "TEXT",
+            "value": "Rechnungsempfanger"
+          },
+          {
+            "type": "TEXT",
+            "value": "Dirk Brammertz"
+          }
+        ],
+        [
+          {
+            "type": "TEXT",
+            "value": "Bankverbindung"
+          },
+          {
+            "type": "TEXT",
+            "value": "DE** ***6 2980 1500 02** ** "
+          }
+        ]
+      ],
+      "header": "Details",
+      "sthButton": {
+        "icon": "string",
+        "label": "string",
+        "type": "EMPTY",
+        "value": "string"
+      }
+    },
+    "number": "1112010210201",
+    "numbersSection": {
+      "dataRows": [
+        [
+          {
+            "type": "TEXT",
+            "value": "0228 25989338"
+          },
+          {
+            "label": "Einstellung",
+            "type": "LINK",
+            "value": "string"
+          },
+          {
+            "label": "Sprachbox",
+            "type": "LINK",
+            "value": "string"
+          },
+          {
+            "type": "TEXT",
+            "value": "Inklusive"
+          }
+        ],
+        [
+          {
+            "type": "TEXT",
+            "value": "0228 25989340"
+          },
+          {
+            "label": "Einstellung",
+            "type": "LINK",
+            "value": "string"
+          },
+          {
+            "label": "Sprachbox",
+            "type": "LINK",
+            "value": "string"
+          },
+          {
+            "type": "TEXT",
+            "value": "Inklusive"
+          }
+        ]
+      ],
+      "header": "Numbers",
+      "numberAddButton": {
+        "label": "Add",
+        "type": "LINK",
+        "value": "string"
+      },
+      "numberEditButton": {
+        "label": "Edit",
+        "type": "LINK",
+        "value": "string"
+      }
+    },
+    "optionsSection": {
+      "dataRows": [
+        [
+          {
+            "type": "TEXT",
+            "value": " "
+          },
+          {
+            "type": "TEXT",
+            "value": "Travel & Surf"
+          },
+          {
+            "type": "TEXT",
+            "value": "Inklusive"
+          }
+        ],
+        [
+          {
+            "type": "TEXT",
+            "value": " "
+          },
+          {
+            "type": "TEXT",
+            "value": "Travel & Surf"
+          },
+          {
+            "type": "TEXT",
+            "value": "Inklusive"
+          }
+        ]
+      ],
+      "header": "Extras",
+      "optionBookButton": {
+        "icon": "string",
+        "label": "string",
+        "type": "EMPTY",
+        "value": "string"
+      },
+      "optionChangeButton": {
+        "icon": "string",
+        "label": "string",
+        "type": "EMPTY",
+        "value": "string"
+      }
+    },
+    "tariff": "Tariffa",
+    "tarrifSection": {
+      "dataRows": [
+        [
+          {
+            "type": "TEXT",
+            "value": "Personliches Kenwort"
+          },
+          {
+            "label": "Zurucksetzen/andern",
+            "type": "LINK",
+            "value": "string"
+          }
+        ]
+      ],
+      "header": "Tarrifs",
+      "tariffChangeButton": {
+        "label": "T Andern",
+        "type": "BUTTON",
+        "value": "string"
+      }
+    }
+  },
+  "homelinks": {
+    "staticLinks": [
+      {
+        "text": "Home",
+        "url": "/",
+        "iconUrl": "https://www.telekom.de/resources/images/207594/icon-persoenliche-daten.png",
+        "iconTitle": "icon-persoenliche-daten"
+      },
+      {
+        "text": "Account Page",
+        "url": "/account_data",
+        "iconUrl": "https://www.telekom.de/resources/images/207594/icon-persoenliche-daten.png",
+        "iconTitle": "icon-persoenliche-daten"
+      }
+    ]
+  },
+  "contracts": {
+    "header": "Meine Verträge",
+    "contractTiles": [
+      {
+        "contractDetails": {
+          "id": "contractNormal",
+          "simUserText": {
+            "text": "",
+            "tooltipId": ""
+          },
+          "contractDetailsUrl": "https://px-poc.telekom.de/kundencenter/vertragsdetails?c=M161307458",
+          "phoneNumber": "0171 3019702",
+          "tariffName": "13979 1397913979 1397913979 1397913979 13979",
+          "earliestProlongationText": ""
+        },
+        "button": {
+          "label": "Anschluss verwalten",
+          "url": "http://127.0.0.1:8085/data-snack.html",
+          "urlType": "LAYER",
+          "dataSnack": true
+        },
+        "source": "fixed"
+      },
+      {
+        "contractDetails": {
+          "id": "contractNormalYellow",
+          "simUserText": {
+            "text": "",
+            "tooltipId": ""
+          },
+          "contractDetailsUrl": "https://px-poc.telekom.de/kundencenter/vertragsdetails?c=M161307458",
+          "phoneNumber": "0171 3019702",
+          "tariffName": "13979",
+          "earliestProlongationText": "Prolongation sample text"
+        },
+        "button": {
+          "label": "",
+          "url": "http://www.google.pl",
+          "urlType": "SIMPLE",
+          "dataSnack": false
+        },
+        "source": "mobile"
+      },
+      {
+        "contractDetails": {
+          "id": "contractError",
+          "simUserText": {
+            "text": "",
+            "tooltipId": ""
+          },
+          "contractDetailsUrl": "https://px-poc.telekom.de/kundencenter/vertragsdetails?c=M161307458",
+          "phoneNumber": "0171 3019702",
+          "tariffName": "13979",
+          "earliestProlongationText": ""
+        },
+        "button": {
+          "label": "Anschluss verwalten",
+          "url": "http://www.google.pl",
+          "urlType": "SIMPLE",
+          "dataSnack": false
+        },
+        "source": "mobile"
+      },
+      {
+        "contractDetails": {
+          "id": "contractConsumed",
+          "simUserText": {
+            "text": "",
+            "tooltipId": ""
+          },
+          "contractDetailsUrl": "https://px-poc.telekom.de/kundencenter/vertragsdetails?c=M161307458",
+          "phoneNumber": "0171 3019702",
+          "tariffName": "13979",
+          "earliestProlongationText": ""
+        },
+        "button": {
+          "label": "Anschluss verwalten",
+          "url": "http://www.google.pl",
+          "urlType": "SIMPLE",
+          "dataSnack": false
+        },
+        "source": "mobile"
+      },
+      {
+        "contractDetails": {
+          "id": "contractUnlimited",
+          "simUserText": {
+            "text": "",
+            "tooltipId": ""
+          },
+          "contractDetailsUrl": "https://px-poc.telekom.de/kundencenter/vertragsdetails?c=M161307458",
+          "phoneNumber": "0171 3019702",
+          "tariffName": "13979",
+          "earliestProlongationText": ""
+        },
+        "button": {
+          "label": "Anschluss verwalten",
+          "url": "http://www.google.pl",
+          "urlType": "SIMPLE",
+          "dataSnack": false
+        },
+        "source": "mobile"
+      }
+    ],
+    "addContractUrl": "http://127.0.0.1:8085/data-snack.html"
+  },
+  "teasers": {
+    "teaserLists": [
+      {
+        "headline": "Teaser List 1",
+        "teasers": [
+          {
+            "description": "Anzeige und Änderung Ihrer persönlichen Daten.",
+            "headline": "Meine Daten",
+            "iconUrl": "https://www.telekom.de/resources/images/303434/datenschutz-graphical.png",
+            "iconTitle": "Meine Daten",
+            "links": [
+              {
+                "title": "Cybercon",
+                "url": "https://www.cybercon.de"
+              }
+            ]
+          },
+          {
+            "description": "Verfolgen Sie Ihre Smartphone- und Festnetz-Bestellungen.",
+            "headline": "Auftragsstatus",
+            "iconUrl": "https://www.telekom.de/resources/images/284062/lieferstatus-96x96.png",
+            "iconTitle": "Auftragsstatus",
+            "links": [
+              {
+                "title": "Tagesschau",
+                "url": "https://www.tagesschau.de"
+              }
+            ]
+          },
+          {
+            "description": "Erweiterungen und Services für Ihren Vertrag.",
+            "headline": "Extras",
+            "iconUrl": "https://www.telekom.de/resources/images/204758/icon-extras.png",
+            "iconTitle": "lieferstatus",
+            "links": [
+              {
+                "title": "Tagesschau",
+                "url": "https://www.tagesschau.de"
+              },
+              {
+                "title": "Cybercon",
+                "url": "https://www.cybercon.de"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "headline": "Teaser List 2",
+        "teasers": [
+          {
+            "description": "Desc 2 1 Desc 2 1 Desc 2 1 Desc 2 1",
+            "headline": "Teaser 2 1 - Long text Teaser 2 1 - Long text Teaser 2 1 - Long text",
+            "iconUrl": "https://www.telekom.de/resources/images/284062/lieferstatus-96x96.png",
+            "iconTitle": "lieferstatus",
+            "links": [
+              {
+                "title": "Cybercon",
+                "url": "https://www.cybercon.de"
+              }
+            ]
+          },
+          {
+            "description": "Desc 2 2",
+            "headline": "Teaser 2 2",
+            "iconUrl": "https://www.telekom.de/resources/images/284062/lieferstatus-96x96.png",
+            "iconTitle": "lieferstatus",
+            "links": [
+              {
+                "title": "Tagesschau",
+                "url": "https://www.tagesschau.de"
+              },
+              {
+                "title": "Cybercon",
+                "url": "https://www.cybercon.de"
+              }
+            ]
+          },
+          {
+            "description": "Desc 2 3",
+            "headline": "Teaser 2 3",
+            "iconUrl": "https://www.telekom.de/resources/images/284062/lieferstatus-96x96.png",
+            "iconTitle": "lieferstatus",
+            "links": [
+              {
+                "title": "Cybercon",
+                "url": "https://www.cybercon.de"
+              }
+            ]
+          },
+          {
+            "description": "Desc 2 3",
+            "headline": "Teaser 2 3",
+            "iconUrl": "https://www.telekom.de/resources/images/284062/lieferstatus-96x96.png",
+            "iconTitle": "lieferstatus",
+            "links": [
+              {
+                "title": "Tagesschau",
+                "url": "https://www.tagesschau.de"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "contractNormal": {
+    "dataVolumeUsage": {
+      "dataUsageType": "NORMAL",
+      "title": "Datenvolumen",
+      "initialValue": "300",
+      "remainingValue": "500 MB",
+      "message": null,
+      "description": "verbleibend fur 11 Tage 14 Std.",
+      "additionalInfo": {
+        "text": "Sie surfen mit reduzierter Geschwindigkeit",
+        "tooltipId": ""
+      },
+      "lastUpdateInfo": "Letze Aktualisierung 23.01.2017, 13:42 Uhr",
+      "percentageUsage": 23,
+      "colorIndicator": null,
+      "dataSnack": {
+        "label": "dd",
+        "available": false
+      }
+    },
+    "button": {
+      "label": "Anschluss verwalten",
+      "url": "http://127.0.0.1:8085/data-snack.html",
+      "urlType": "LAYER",
+      "dataSnack": true
+    },
+    "source": "fixed"
+  },
+  "contractNormalYellow": {
+    "dataVolumeUsage": {
+      "dataUsageType": "NORMAL",
+      "title": "Datenvolumen",
+      "initialValue": "300",
+      "remainingValue": "500 MB",
+      "message": null,
+      "description": "verbleibend fur 11 Tage 14 Std.",
+      "additionalInfo": {
+        "text": "Sie sind <span data-tip=\"Als Nutzer haben Sie eingeschränkte Rechte und können im Wesentlichen nur aktuelle Verbrauchsdaten einsehen.\" data-for=\"contractNormal\">Nutzer</span> für diesen Vertrag. | <a href=\"https://www.telekom.de/hilfe/kundencenter/kundencenter-mobilfunk-erweiterten-service-nutzen\" target=\"_blank\">Ändern</a>",
+        "tooltipId": "contractNormal"
+      },
+      "lastUpdateInfo": "",
+      "percentageUsage": 23,
+      "colorIndicator": "YELLOW",
+      "dataSnack": {
+        "label": "dd",
+        "available": true
+      }
+    },
+    "button": {
+      "label": "",
+      "url": "http://www.google.pl",
+      "urlType": "SIMPLE",
+      "dataSnack": false
+    },
+    "source": "mobile"
+  },
+  "contractError": {
+    "dataVolumeUsage": {
+      "dataUsageType": "ERROR",
+      "title": null,
+      "initialValue": null,
+      "remainingValue": null,
+      "message": "Aktuell können leider keine daten angezeigt werden",
+      "description": null,
+      "additionalInfo": {
+        "text": "",
+        "tooltipId": ""
+      },
+      "lastUpdateInfo": "Letze Aktualisierung 23.01.2017, 13:42 Uhr",
+      "percentageUsage": 100,
+      "colorIndicator": null,
+      "dataSnack": {
+        "label": "dd",
+        "available": false
+      }
+    },
+    "button": {
+      "label": "Anschluss verwalten",
+      "url": "http://www.google.pl",
+      "urlType": "SIMPLE",
+      "dataSnack": false
+    },
+    "source": "mobile"
+  },
+  "contractConsumed": {
+    "dataVolumeUsage": {
+      "dataUsageType": "CONSUMED",
+      "title": null,
+      "initialValue": null,
+      "remainingValue": null,
+      "message": "Volumen aufgeubraucht",
+      "description": "verbleibend fur 11 Tage 14 Std.",
+      "additionalInfo": {
+        "text": "Sie surfen mit reduzierter Geschwindigkeit",
+        "tooltipId": ""
+      },
+      "lastUpdateInfo": "Letze Aktualisierung 23.01.2017, 13:42 Uhr",
+      "percentageUsage": 0,
+      "colorIndicator": null,
+      "dataSnack": {
+        "label": "dd",
+        "available": false
+      }
+    },
+    "button": {
+      "label": "Anschluss verwalten",
+      "url": "http://www.google.pl",
+      "urlType": "SIMPLE",
+      "dataSnack": false
+    },
+    "source": "mobile"
+  },
+  "contractUnlimited": {
+    "dataVolumeUsage": {
+      "dataUsageType": "UNLIMITED",
+      "title": null,
+      "initialValue": null,
+      "remainingValue": null,
+      "message": "Unbegrenzt",
+      "description": "fur 23 Stunden, 24 Minuten",
+      "additionalInfo": {
+        "text": "",
+        "tooltipId": ""
+      },
+      "lastUpdateInfo": "Letze Aktualisierung 23.01.2017, 13:42 Uhr",
+      "percentageUsage": 100,
+      "colorIndicator": null,
+      "dataSnack": {
+        "label": "dd",
+        "available": false
+      }
+    },
+    "button": {
+      "label": "Anschluss verwalten",
+      "url": "http://www.google.pl",
+      "urlType": "SIMPLE",
+      "dataSnack": false
+    },
+    "source": "mobile"
+  }
+}
