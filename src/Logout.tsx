@@ -2,12 +2,15 @@ import { Spinner } from '@blueprintjs/core';
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { app } from './base';
+import { LoginInfoContext } from './LoginInfoContext'
 
 interface LogoutState {
   redirect: boolean
 }
 
 class Logout extends Component {
+
+  static contextType = LoginInfoContext
 
   state: LogoutState = {
     redirect: false
@@ -17,6 +20,8 @@ class Logout extends Component {
     app.auth().signOut().then((user) => {
       localStorage.removeItem("firebase-user");
       localStorage.removeItem("firebase-authenticated");
+      const context = this.context;
+      context.setAuth(null);
       this.setState({ redirect: true })
     })
   }

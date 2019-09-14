@@ -37,9 +37,11 @@ const TeasersList = (props: TeaserViewProps) => {
     return (
         <div>
             <h3 className="TeasersList__headline">{props.headline}</h3>
-            {props.teaserList.map((item, index) =>
-                <TeaserView key={index} teaser={item} />
-            )}
+            <div className="TeaserList_flex">
+                {props.teaserList.map((item, index) =>
+                    <TeaserView key={index} teaser={item} />
+                )}
+            </div>
         </div>
     );
 };

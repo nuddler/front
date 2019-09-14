@@ -6,8 +6,32 @@ import {
 export type SuperAgentResponse = request.Response;
 export type SuperAgentCallbackHandler = (err: any, res ? : SuperAgentResponse) => void;
 
+export interface Address {
+    'city': string
+
+        'id': string
+
+    'name': string
+
+        'street': string
+
+}
+
 export interface AvailableCars {
     'carList': Array < CarBasicInfo >
+
+}
+
+export interface BillingData {
+    'bankName': string
+
+        'iban': string
+
+    'id': string
+
+        'name': string
+
+    'swift': string
 
 }
 
@@ -86,6 +110,17 @@ export interface CarsSection {
 
 }
 
+export interface DrivingLicence {
+    'categoryList': Array < string >
+
+        'expirationDate': string
+
+    'id': string
+
+        'licenceNumber': string
+
+}
+
 export interface Feature {
     'description': string
 
@@ -103,6 +138,25 @@ export interface Feature {
 
 export interface GreetingsSection {
     'greetingText': string
+
+}
+
+export interface PersonalDataSection {
+    'billingData': BillingData
+
+        'contactAddress': Address
+
+    'email': string
+
+        'firstName': string
+
+    'lastName': string
+
+        'licence': DrivingLicence
+
+    'phoneNumber': string
+
+        'userAddress': Address
 
 }
 
@@ -175,6 +229,7 @@ export class ApiSdk {
         let req = (request as SuperAgentStatic)(method, url).query(queryParameters).withCredentials();
 
         Object.keys(Object.assign(headers, this.headers)).forEach(key => {
+            console.log(headers[key]);
             req.set(key, headers[key]);
         });
 
@@ -205,6 +260,65 @@ export class ApiSdk {
         });
     }
 
+    carBasicInfoUsingGETURL(parameters: {
+        'id': string,
+        $queryParameters ? : any,
+        $domain ? : string
+    }): string {
+        let queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        // CHANGE: Prefix with base path from specification
+        let path = '/api/car/basic/{id}';
+
+        path = path.replace('{id}', `${parameters['id']}`);
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        let keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? '?' + (keys.map(key => key + '=' + encodeURIComponent(queryParameters[key])).join('&')) : '');
+    }
+
+    /**
+     * Get a CarBasicInfo objects with car basic info
+     * @method
+     * @name ApiSdk#carBasicInfoUsingGET
+     * @param {string} id - id
+     */
+    carBasicInfoUsingGET(parameters: {
+        'id': string,
+        $queryParameters ? : any,
+        $domain ? : string
+    }): Promise < request.Response > {
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        // CHANGE: Prefix with base path from specification
+        let path = '/api/car/basic/{id}';
+        let body: any;
+        let queryParameters: any = {};
+        let headers: any = {};
+        let form: any = {};
+        return new Promise((resolve, reject) => {
+            headers['Accept'] = '*/*';
+
+            path = path.replace('{id}', `${parameters['id']}`);
+
+            if (parameters['id'] === undefined) {
+                reject(new Error('Missing required  parameter: id'));
+                return;
+            }
+
+            if (parameters.$queryParameters) {
+                Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                    queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+                });
+            }
+
+            this.request('GET', domain + path, body, headers, queryParameters, form, reject, resolve);
+        });
+    }
     carDetailsUsingGETURL(parameters: {
         'id': string,
         $queryParameters ? : any,
@@ -262,6 +376,71 @@ export class ApiSdk {
             }
 
             this.request('GET', domain + path, body, headers, queryParameters, form, reject, resolve);
+        });
+    }
+    leaseCarUsingPOSTURL(parameters: {
+        'id': string,
+        $queryParameters ? : any,
+        $domain ? : string
+    }): string {
+        let queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        // CHANGE: Prefix with base path from specification
+        let path = '/api/car/{id}';
+
+        path = path.replace('{id}', `${parameters['id']}`);
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        queryParameters = {};
+
+        let keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? '?' + (keys.map(key => key + '=' + encodeURIComponent(queryParameters[key])).join('&')) : '');
+    }
+
+    /**
+     * Lease a car with id in path
+     * @method
+     * @name ApiSdk#leaseCarUsingPOST
+     * @param {string} id - id
+     */
+    leaseCarUsingPOST(parameters: {
+        'id': string,
+        $queryParameters ? : any,
+        $domain ? : string
+    }): Promise < request.Response > {
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        // CHANGE: Prefix with base path from specification
+        let path = '/api/car/{id}';
+        let body: any;
+        let queryParameters: any = {};
+        let headers: any = {};
+        let form: any = {};
+        return new Promise((resolve, reject) => {
+            headers['Accept'] = '*/*';
+            headers['Content-Type'] = 'application/json';
+
+            path = path.replace('{id}', `${parameters['id']}`);
+
+            if (parameters['id'] === undefined) {
+                reject(new Error('Missing required  parameter: id'));
+                return;
+            }
+
+            if (parameters.$queryParameters) {
+                Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                    queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+                });
+            }
+
+            form = queryParameters;
+            queryParameters = {};
+
+            this.request('POST', domain + path, body, headers, queryParameters, form, reject, resolve);
         });
     }
     carsSectionUsingGETURL(parameters: {
@@ -389,6 +568,53 @@ export class ApiSdk {
         const domain = parameters.$domain ? parameters.$domain : this.domain;
         // CHANGE: Prefix with base path from specification
         let path = '/api/greetings';
+        let body: any;
+        let queryParameters: any = {};
+        let headers: any = {};
+        let form: any = {};
+        return new Promise((resolve, reject) => {
+            headers['Accept'] = '*/*';
+
+            if (parameters.$queryParameters) {
+                Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                    queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+                });
+            }
+
+            this.request('GET', domain + path, body, headers, queryParameters, form, reject, resolve);
+        });
+    }
+    personalSectionUsingGETURL(parameters: {
+        $queryParameters ? : any,
+        $domain ? : string
+    }): string {
+        let queryParameters: any = {};
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        // CHANGE: Prefix with base path from specification
+        let path = '/api/personalData';
+
+        if (parameters.$queryParameters) {
+            Object.keys(parameters.$queryParameters).forEach(function(parameterName) {
+                queryParameters[parameterName] = parameters.$queryParameters[parameterName];
+            });
+        }
+
+        let keys = Object.keys(queryParameters);
+        return domain + path + (keys.length > 0 ? '?' + (keys.map(key => key + '=' + encodeURIComponent(queryParameters[key])).join('&')) : '');
+    }
+
+    /**
+     * TODO!!!!
+     * @method
+     * @name ApiSdk#personalSectionUsingGET
+     */
+    personalSectionUsingGET(parameters: {
+        $queryParameters ? : any,
+        $domain ? : string
+    }): Promise < request.Response > {
+        const domain = parameters.$domain ? parameters.$domain : this.domain;
+        // CHANGE: Prefix with base path from specification
+        let path = '/api/personalData';
         let body: any;
         let queryParameters: any = {};
         let headers: any = {};

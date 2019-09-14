@@ -3,11 +3,14 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import { AvailableCars, CarBasicInfo } from '../../api/api-sdk';
 import { apiService } from '../../api/api.service';
+import { Card, CardDeck, Button, ButtonToolbar } from 'react-bootstrap';
 
 interface AddCarState {
     carList: Array<AvailableCar>,
     header: string,
-    selectedCar?: AvailableCar
+    selectedCar?: AvailableCar,
+    selectedCarBasicInfo?: CarBasicInfo
+
 }
 
 interface AvailableCar {
@@ -20,6 +23,7 @@ export default class AddCar extends React.Component {
     constructor(props) {
         super(props);
         this.onChange = this.onChange.bind(this);
+        this.onSend = this.onSend.bind(this);
     }
     state: AddCarState = {
         carList: [],
@@ -46,46 +50,79 @@ export default class AddCar extends React.Component {
             .catch(err => console.error(err));
     }
 
-    onChange(selectedOption) {
-        this.setState({ selectedCar: selectedOption })
+    getCar(id: string) {
+        apiService()
+            .then(api => api.carBasicInfoUsingGET({ id: id }))
+            .then(
+                response => {
+                    const data: CarBasicInfo = response.body;
+                    this.setState({
+                        selectedCarBasicInfo: data,
+                    });
+                })
+            .catch(err => console.error(err));
     }
 
+    leaseCar(id: string) {
+        apiService()
+            .then(api => api.leaseCarUsingPOST({ id: id }))
+            .then(
+                response => {
+                    const data: string = response.body;
+                })
+            .catch(err => console.error(err));
+    }
+
+    onChange(selectedOption) {
+        this.setState({ selectedCar: selectedOption })
+        this.getCar(selectedOption.value);
+    }
+
+    onSend() {
+        this.leaseCar(this.state.selectedCar.value);
+    }
+    
+
     render() {
+
         return (
             <React.Fragment>
                 <div className="container">
-                    <div className="card">
+                    <div className="add-car-card">
                         <div className="container-fliud">
                             <div className="wrapper row">
-                                <h1>{this.state.header}</h1>
-                            </div>
-                            <div className="wrapper row">
-                                <div className="row text-center text-lg-left">
+                                <div className="add-car-card__header-container">
+                                    <h3 className="add-car-card__header">{this.state.header}</h3>
                                     <Dropdown options={this.state.carList} onChange={this.onChange} value={this.state.selectedCar} placeholder="Cars" />
                                 </div>
                             </div>
                             {
-                                this.state.selectedCar &&
+                                this.state.selectedCar && this.state.selectedCarBasicInfo &&
                                 <React.Fragment>
-                                    <div className="wrapper row">
+                                    <CardDeck>
 
-                                        <div className="tile-progress tile-primary">
-                                            <div className="tile-header">
-                                                <h3>{this.state.selectedCar.label}</h3>
-                                                <span>this.props.car.takenBy</span>
-                                            </div>
-                                            <div className="tile-progressbar">
-                                                {/* <span data-fill="65.5%" style="width: 65.5%;"></span> */}
-                                                {/* <span data-fill="65.5%" style={pStyle}></span> */}
-                                            </div>
-                                            <div className="tile-footer">
-                                                <h4><span className="pct-counter">this.props.car.brand</span></h4>
-                                                <span>this.props.car.model</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        <Card>
+                                            <Card.Img variant="top" src={this.state.selectedCarBasicInfo.iconUrl} />
+                                            <Card.Body>
+                                                <Card.Title>{this.state.selectedCarBasicInfo.name}</Card.Title>
+                                                <Card.Text>
+                                                    {this.state.selectedCarBasicInfo.prettyName}
+                                                </Card.Text>
+                                            </Card.Body>
+                                            <Card.Footer>
+                                                <small className="text-muted">{this.state.selectedCarBasicInfo.totalMileage}</small>
+                                            </Card.Footer>
+                                        </Card>
+                                    </CardDeck>
+
                                     <div className="wrapper row">
-                                        BUTTON
+                                        <ButtonToolbar >
+                                            <Button
+                                                onClick={this.onSend}
+                                                variant="success">
+                                                Lease
+                                            </Button>
+                                        </ButtonToolbar>
                                     </div>
                                 </React.Fragment>
                             }

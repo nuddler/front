@@ -14,17 +14,17 @@ export default class About extends React.Component {
                             <h2 className="my-4">Our Team</h2>
                         </div>
                         <div className="col-lg-4 col-sm-6 text-center mb-4">
-                            <img className="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt="" />
+                            <img className="rounded-circle img-fluid d-block mx-auto" src="https://media.istockphoto.com/photos/portrait-of-smiling-handsome-man-in-blue-tshirt-standing-with-crossed-picture-id1045886560?k=6&m=1045886560&s=612x612&w=0&h=hXrxai1QKrfdqWdORI4TZ-M0ceCVakt4o6532vHaS3I=" alt="" />
                             <h3>John Smith<small>Job Title</small></h3>
                             <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
                         </div>
                         <div className="col-lg-4 col-sm-6 text-center mb-4">
-                            <img className="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt="" />
+                            <img className="rounded-circle img-fluid d-block mx-auto" src="https://image.shutterstock.com/image-photo/handsome-unshaven-young-darkskinned-male-260nw-640011838.jpg" alt="" />
                             <h3>John Smith<small>Job Title</small></h3>
                             <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
                         </div>
                         <div className="col-lg-4 col-sm-6 text-center mb-4">
-                            <img className="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt="" />
+                            <img className="rounded-circle img-fluid d-block mx-auto" src="https://image.shutterstock.com/image-photo/happy-cheerful-young-woman-wearing-260nw-613759379.jpg" alt="" />
                             <h3>John Smith<small>Job Title</small></h3>
                             <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
                         </div>

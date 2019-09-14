@@ -12,6 +12,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-router-modal/css/react-router-modal.css';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { LoginInfoContext } from '../LoginInfoContext'
+
 interface BodyContainerState {
   authenticated: boolean
 }
@@ -29,46 +31,50 @@ function AuthenticatedRoute({ component: Component, authenticated, ...rest }) {
 export default class BodyContainer extends React.Component {
 
   state: BodyContainerState = {
-    //authenticated: false
-    authenticated: true
+    authenticated: false
+    // authenticated: true
 
   }
 
   componentDidMount() {
-    let login = localStorage.getItem("firebase-authenticated");
-    if (login && login === "1") {
-      this.setState({ authenticated: true })
-    } else {
-      this.forceUpdate();
-    }
+    // let login = localStorage.getItem("firebase-authenticated");
+    // if (login && login === "1") {
+    //   this.setState({ authenticated: true })
+    // } else {
+    //   this.forceUpdate();
+    // }
   }
 
   render() {
     return (
-      <div className="container" >
-        <ToastContainer
-          position="top-center"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          // pauseOnVisibilityChange={false}
-          draggable
-          pauseOnHover
-        />
-        <Switch>
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/logout" component={Logout} />
+      <LoginInfoContext.Consumer>
+        {({ user, auth, setAuth }) => (
+          <div className="container" >
+            <ToastContainer
+              position="top-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              // pauseOnVisibilityChange={false}
+              draggable
+              pauseOnHover
+            />
+            <Switch>
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/logout" component={Logout} />
 
-          <AuthenticatedRoute path="/personal" component={Personal} authenticated={this.state.authenticated} />
-          <AuthenticatedRoute exact path="/about" component={About} authenticated={this.state.authenticated} />
+              <AuthenticatedRoute path="/personal" component={Personal} authenticated={auth} />
+              <AuthenticatedRoute exact path="/about" component={About} authenticated={auth} />
 
-          <AuthenticatedRoute path="/" component={Home} authenticated={this.state.authenticated} />
-          <Route component={NotFound} />
-        </Switch>
-        <ModalContainer />
-      </div>
+              <AuthenticatedRoute path="/" component={Home} authenticated={auth} />
+              <Route component={NotFound} />
+            </Switch>
+            <ModalContainer />
+          </div>
+        )}
+      </LoginInfoContext.Consumer>
     );
   }
 }

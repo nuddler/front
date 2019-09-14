@@ -5,9 +5,7 @@
     "version": "1.0",
     "title": "Api Documentation",
     "termsOfService": "urn:tos",
-    "contact": {
-      
-    },
+    "contact": {},
     "license": {
       "name": "Apache 2.0",
       "url": "http://www.apache.org/licenses/LICENSE-2.0"
@@ -22,6 +20,47 @@
     }
   ],
   "paths": {
+    "/api/car/basic/{id}": {
+      "get": {
+        "tags": [
+          "home-controller"
+        ],
+        "summary": "Get a CarBasicInfo objects with car basic info",
+        "operationId": "carBasicInfoUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation.",
+            "schema": {
+              "$ref": "#/definitions/CarBasicInfo"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "User is not authorized to use this resource."
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "A generic error indication for an unexpected server execution problem."
+          }
+        }
+      }
+    },
     "/api/car/{id}": {
       "get": {
         "tags": [
@@ -47,6 +86,51 @@
             "schema": {
               "$ref": "#/definitions/CarDetails"
             }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "User is not authorized to use this resource."
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "A generic error indication for an unexpected server execution problem."
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "home-controller"
+        ],
+        "summary": "Lease a car with id in path",
+        "operationId": "leaseCarUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "201": {
+            "description": "Created"
           },
           "401": {
             "description": "Unauthorized"
@@ -159,6 +243,38 @@
         }
       }
     },
+    "/api/personalData": {
+      "get": {
+        "tags": [
+          "home-controller"
+        ],
+        "summary": "TODO!!!!",
+        "operationId": "personalSectionUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation.",
+            "schema": {
+              "$ref": "#/definitions/PersonalDataSection"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "User is not authorized to use this resource."
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "A generic error indication for an unexpected server execution problem."
+          }
+        }
+      }
+    },
     "/api/teasers": {
       "get": {
         "tags": [
@@ -193,6 +309,24 @@
     }
   },
   "definitions": {
+    "Address": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "street": {
+          "type": "string"
+        }
+      },
+      "title": "Address"
+    },
     "AvailableCars": {
       "type": "object",
       "properties": {
@@ -204,6 +338,27 @@
         }
       },
       "title": "AvailableCars"
+    },
+    "BillingData": {
+      "type": "object",
+      "properties": {
+        "bankName": {
+          "type": "string"
+        },
+        "iban": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "swift": {
+          "type": "string"
+        }
+      },
+      "title": "BillingData"
     },
     "CarBasicInfo": {
       "type": "object",
@@ -273,11 +428,11 @@
         },
         "endOfInsurance": {
           "type": "string",
-          "format": "date-time"
+          "format": "date"
         },
         "endOfTechnicalInspection": {
           "type": "string",
-          "format": "date-time"
+          "format": "date"
         },
         "engine": {
           "type": "string"
@@ -334,6 +489,28 @@
       },
       "title": "CarsSection"
     },
+    "DrivingLicence": {
+      "type": "object",
+      "properties": {
+        "categoryList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "expirationDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "id": {
+          "type": "string"
+        },
+        "licenceNumber": {
+          "type": "string"
+        }
+      },
+      "title": "DrivingLicence"
+    },
     "Feature": {
       "type": "object",
       "properties": {
@@ -366,6 +543,36 @@
         }
       },
       "title": "GreetingsSection"
+    },
+    "PersonalDataSection": {
+      "type": "object",
+      "properties": {
+        "billingData": {
+          "$ref": "#/definitions/BillingData"
+        },
+        "contactAddress": {
+          "$ref": "#/definitions/Address"
+        },
+        "email": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "licence": {
+          "$ref": "#/definitions/DrivingLicence"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "userAddress": {
+          "$ref": "#/definitions/Address"
+        }
+      },
+      "title": "PersonalDataSection"
     },
     "Teaser": {
       "type": "object",

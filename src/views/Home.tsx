@@ -5,13 +5,13 @@ import AddCar from '../components/AddCar/AddCar';
 import { ModalRoute } from 'react-router-modal';
 import { ShowCar } from '../components/ShowCar/ShowCar';
 
-export interface MyAccountState {
+export interface HomeState {
     greetingText?: string,
 }
 
 export default class Home extends React.Component {
 
-    state: MyAccountState = {
+    state: HomeState = {
         greetingText: "Grting Heder",
     };
 
