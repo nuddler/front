@@ -210,7 +210,6 @@ export class ApiSdk {
         if (headers) {
             this.headers = headers;
         }
-
     }
 
     getDomain() {
@@ -229,7 +228,6 @@ export class ApiSdk {
         let req = (request as SuperAgentStatic)(method, url).query(queryParameters).withCredentials();
 
         Object.keys(Object.assign(headers, this.headers)).forEach(key => {
-            console.log(headers[key]);
             req.set(key, headers[key]);
         });
 

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { CustomerNumberRow } from '../components/accountDataPage/CustomerNumberRow';
 import { DataRow } from '../components/accountDataPage/DataRow';
-import PageHeader from '../page-headers';
 import { AddressBox } from '../components/accountDataPage/AddressBox';
 import { BankAccountBox } from '../components/accountDataPage/BankAccountBox';
 import { apiService } from '../api/api.service';
@@ -35,7 +34,7 @@ export default class Personal extends React.Component {
     
     componentDidMount() {
         apiService()
-            .then(api => api.personalSectionUsingGET({})) //todo: cleanup
+            .then(api => api.personalSectionUsingGET({}))
             .then(
                 response => {
                     const data: PersonalDataSection = response.body;
@@ -57,12 +56,12 @@ export default class Personal extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <PageHeader className="phx-u-space--top_2" headerText={"Personal Page Header"} />
+                <h1 className="my-4 text-center text-lg-left">Dane twojego konta</h1>
+
                 <div className="row">
-                    <CustomerNumberRow customerNumber={"Customer Number"} header={"Customer Number"} />
                     <div className={`phx-col-l-12 phx-col-m-12 phx-col-s-12 phx-col-xs-12`}>
                         <div className="phx-list phx-list--personal-data phx-u-space--bottom_5">
-                            <DataRow description={"Opis sekcji..."} header={"Dane Personalne"}>
+                            <DataRow description={""} header={"Dane Personalne"}>
                                 <React.Fragment>
                                     <hr />
                                     <p className="Collapsibe__section-header">{"Adres użytkownika"}</p>
@@ -71,7 +70,7 @@ export default class Personal extends React.Component {
                                     />
                                 </React.Fragment>
                             </DataRow>
-                            <DataRow description={"Opis sekcji..."} header={"Dane Kontaktowe"}>
+                            <DataRow description={""} header={"Dane Kontaktowe"}>
                                 <React.Fragment>
                                     <hr />
                                     <p className="Collapsibe__section-header">{"Adres Kontaktowy"}</p>
@@ -86,7 +85,7 @@ export default class Personal extends React.Component {
                                     {this.state.email}
                                 </React.Fragment>
                             </DataRow>
-                            <DataRow description={"Opis sekcji..."} header={"Dane Billigowe"}>
+                            <DataRow description={""} header={"Dane Billigowe"}>
                                 <React.Fragment>
                                     <hr />
                                     <p className="Collapsibe__section-header">{"Adres do płatności"}</p>
@@ -100,7 +99,7 @@ export default class Personal extends React.Component {
                                     />
                                 </React.Fragment>
                             </DataRow>
-                            <DataRow description={"Opis sekcji..."} header={"Prawo Jazdy"}>
+                            <DataRow description={""} header={"Prawo Jazdy"}>
                                 {this.state.licence != null &&
                                     <div className="phx-list--personal-data__section">
                                         <p className="phx-list--personal-data__description">{this.state.licence.licenceNumber}</p>

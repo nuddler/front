@@ -1,9 +1,9 @@
 import * as React from 'react';
+import { CardDeck } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { CarBasicInfo, CarsSection } from '../../api/api-sdk';
 import { apiService } from '../../api/api.service';
 import { CarBox } from './CarBox';
-import { CardDeck, Card } from 'react-bootstrap';
 
 
 interface CarBoxsState {
@@ -36,6 +36,7 @@ export default class CarBoxs extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <h3 className="TeasersList__headline">Twoje auta</h3>
                 <CardDeck>
                     {
                         this.state.carList.map((item, index) => <CarBox key={index} car={item} />)

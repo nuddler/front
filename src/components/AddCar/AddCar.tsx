@@ -14,8 +14,8 @@ interface AddCarState {
 }
 
 interface AvailableCar {
-    value: string,
-    label: string
+    value: string;
+    label: string;
 }
 
 export default class AddCar extends React.Component {
@@ -27,7 +27,7 @@ export default class AddCar extends React.Component {
     }
     state: AddCarState = {
         carList: [],
-        header: "Add car",
+        header: "Dodaj Auto",
     };
 
     createAvaliableCar(car: CarBasicInfo): AvailableCar {
@@ -76,6 +76,7 @@ export default class AddCar extends React.Component {
     onChange(selectedOption) {
         this.setState({ selectedCar: selectedOption })
         this.getCar(selectedOption.value);
+        console.log(JSON.stringify(this.state.carList));
     }
 
     onSend() {

@@ -12,7 +12,7 @@ export interface HomeState {
 export default class Home extends React.Component {
 
     state: HomeState = {
-        greetingText: "Grting Heder",
+        greetingText: "Witaj w aplikacji Fleeter",
     };
 
     render() {

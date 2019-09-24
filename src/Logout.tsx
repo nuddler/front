@@ -18,8 +18,6 @@ class Logout extends Component {
 
   componentWillMount() {
     app.auth().signOut().then((user) => {
-      localStorage.removeItem("firebase-user");
-      localStorage.removeItem("firebase-authenticated");
       const context = this.context;
       context.setAuth(null);
       this.setState({ redirect: true })

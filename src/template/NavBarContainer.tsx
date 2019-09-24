@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { LoginInfoContext } from '../LoginInfoContext'
+import { Navbar, Nav } from 'react-bootstrap';
 
 interface NavBarContainerState {
   // authenticated: boolean
@@ -21,43 +22,37 @@ export default class NavBarContainer extends React.Component {
   render() {
     return (
       <LoginInfoContext.Consumer>
-        {({ user, auth, setAuth }) => (
-
-          <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div className="container">
-              <Link className="navbar-brand" to="/">Fleeter</Link>
-              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div className="collapse navbar-collapse" id="navbarResponsive">
-                <ul className="navbar-nav ml-auto">
+        {({ user, auth }) => (
+          <div className="p-2">
+            <Navbar className="rounded" collapseOnSelect expand="lg" bg="primary" variant="dark">
+              <Navbar.Brand><Link className="navbar-brand" to="/">Fleeter - React.Js</Link></Navbar.Brand>
+              {auth && (
+                <Navbar.Text>
+                  Zalogowany: {user.displayName}
+                </Navbar.Text>
+              )}
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mr-auto">
+                </Nav>
+                <Nav>
                   {auth ? (
                     <React.Fragment>
-                      <li className="nav-item active">
-                        <Link className="nav-link" to="/">Home - {user.user.email}</Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link className="nav-link" to="/personal">Personal Data</Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link className="nav-link" to="/about">About</Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link className="nav-link" to="/logout" aria-label="Log Out">Logout</Link>
-                      </li>
+                      <Nav.Item><Link className="nav-link" to="/">Home </Link></Nav.Item>
+                      <Nav.Item><Link className="nav-link" to="/personal">Konto</Link></Nav.Item>
+                      <Nav.Item><Link className="nav-link" to="/about">O Nas</Link></Nav.Item>
+                      <Nav.Item><Link className="nav-link" to="/logout">Logout</Link></Nav.Item>
                     </React.Fragment>
                   ) :
                     (
-                      <li className="nav-item">
-                        <Link className="nav-link" to="/login" aria-label="Login">Login</Link>
-                      </li>
+                      <Nav.Item><Link className="nav-link" to="/login">Login</Link></Nav.Item>
                     )}
-
-                </ul>
-              </div>
-            </div>
-          </nav>
+                </Nav>
+              </Navbar.Collapse>
+            </Navbar>
+          </div>
         )}
+
       </LoginInfoContext.Consumer>
     );
   }

@@ -32,23 +32,12 @@ export default class BodyContainer extends React.Component {
 
   state: BodyContainerState = {
     authenticated: false
-    // authenticated: true
-
-  }
-
-  componentDidMount() {
-    // let login = localStorage.getItem("firebase-authenticated");
-    // if (login && login === "1") {
-    //   this.setState({ authenticated: true })
-    // } else {
-    //   this.forceUpdate();
-    // }
   }
 
   render() {
     return (
       <LoginInfoContext.Consumer>
-        {({ user, auth, setAuth }) => (
+        {({ user, auth }) => (
           <div className="container" >
             <ToastContainer
               position="top-center"

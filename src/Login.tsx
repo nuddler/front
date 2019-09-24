@@ -30,7 +30,14 @@ class Login extends Component<RouteComponentProps> {
 
     this.handleEmailChange = this.handleEmailChange.bind(this)
     this.handlePasswordChange = this.handlePasswordChange.bind(this)
+  }
 
+  componentDidMount() {
+    app.auth().onAuthStateChanged((newUser) => {
+      if (newUser) {
+        this.setState({ redirect: true })
+      }
+    })
   }
 
   state: LoginState = {
@@ -39,15 +46,9 @@ class Login extends Component<RouteComponentProps> {
     email: ""
   }
 
+
   setCurrentUser(user: firebase.auth.UserCredential, setAuth) {
-    setAuth(user);
-    if (user) {
-      // localStorage.setItem("firebase-user", user);
-      localStorage.setItem("firebase-authenticated", "1");
-    } else {
-      localStorage.removeItem("firebase-user");
-      localStorage.setItem("firebase-authenticated", "0");
-    }
+    setAuth(user.user);
   }
 
   authWithFacebook({ user, auth, setAuth }) {
@@ -121,7 +122,9 @@ class Login extends Component<RouteComponentProps> {
   }
 
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/' } }
+    const { from } = (this.props.location.state && this.props.location.state.from.pathname === '/login' ? { from: { pathname: '/' } } : this.props.location.state) || { from: { pathname: '/' } }
+    // const { from } = { from: { pathname: '/' } }
+
 
     if (this.state.redirect === true) {
       return <Redirect to={from} />
@@ -133,27 +136,33 @@ class Login extends Component<RouteComponentProps> {
 
           <React.Fragment>
             <div style={loginStyles}>
-              <button style={{ width: "100%" }} className="pt-button pt-intent-primary" onClick={() => { this.authWithFacebook({ user, auth, setAuth }) }}>Log In with Facebook</button>
-              <button style={{ width: "100%" }} className="pt-button pt-intent-primary" onClick={() => { this.authWithGoogle({ user, auth, setAuth }) }}>Log In with Google</button>
+              <div id="footer">
+                <ul className="list-unstyled list-inline social text-center">
+                  <li onClick={() => { this.authWithFacebook({ user, auth, setAuth }) }} className="list-inline-item"><a href="javascript:void();"><i className="fa fa-facebook"></i></a></li>
+                  <li onClick={() => { this.authWithGoogle({ user, auth, setAuth }) }} className="list-inline-item"><a href="javascript:void();"><i className="fa fa-google-plus"></i></a></li>
+                </ul>
+              </div>
+              {/* <button style={{ width: "100%" }} className="pt-button pt-intent-primary" onClick={() => { this.authWithFacebook({ user, auth, setAuth }) }}>Log In with Facebook</button> */}
+              {/* <button style={{ width: "100%" }} className="pt-button pt-intent-primary" onClick={() => { this.authWithGoogle({ user, auth, setAuth }) }}>Log In with Google</button> */}
               <hr style={{ marginTop: "10px", marginBottom: "10px" }} />
 
               <Form>
                 <Form.Group controlId="formControlsEmail">
-                  <Form.Label>Email address</Form.Label>
-                  <Form.Control type="email" placeholder="Enter email" value={this.state.email} onChange={this.handleEmailChange}
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control type="email" placeholder="Email" value={this.state.email} onChange={this.handleEmailChange}
                   />
                   <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
+                    Lore ipsum.
                   </Form.Text>
                 </Form.Group>
 
                 <Form.Group controlId="formControlsPassword">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control type="password" placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange}
+                  <Form.Label>Hasło</Form.Label>
+                  <Form.Control type="password" placeholder="Hasło" value={this.state.password} onChange={this.handlePasswordChange}
                   />
                 </Form.Group>
                 <Button variant="primary" type="submit" onClick={(event) => { this.authWithEmailPassword(event, { user, auth, setAuth }) }}>
-                  Submit
+                  Login
                 </Button>
 
               </Form>

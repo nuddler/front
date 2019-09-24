@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { configureApiService } from './api/api.service';
 
 import { LoginInfoContext } from './LoginInfoContext';
+import { app } from './base';
 
 export class App extends React.Component {
 
@@ -15,26 +16,28 @@ export class App extends React.Component {
         user: null
     }
 
-    setAuth = (user: firebase.auth.UserCredential) => {
-        user.user.getIdToken().then(function (idToken) {  // <------ Check this line
-            configureApiService(
-                {},
-                {
-                    // Authorization: `Bearer ` + idToken
-                    'X-Firebase-Auth' : idToken
-                });
-        });
-
-
+    setAuth = (newUser: firebase.User) => {
+        if (newUser) {
+            newUser.getIdToken().then(function (idToken) {
+                configureApiService(
+                    {},
+                    {
+                        'X-Firebase-Auth': idToken
+                    });
+            });
+        }
 
         this.setState(state => ({
-            auth: user !== null,
-            user: user
+            auth: newUser !== null,
+            user: newUser
         }));
     }
 
     constructor(props) {
         super(props);
+        app.auth().onAuthStateChanged((newUser) => {
+            this.setAuth(newUser);
+        })
     }
 
     render() {
